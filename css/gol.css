@@ -3,6 +3,19 @@
     display: block;
 }
 
+.option {
+    float: left;
+}
+
+#functions {
+    clear: both;
+}
+
+#functions input[type=button] {
+    background-color: whitesmoke;
+    color: #323232;
+}
+
 table {
     width: 50%;
     border-collapse: collapse;
