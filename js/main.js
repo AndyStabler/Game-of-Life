@@ -96,12 +96,12 @@ function playPause() {
             step()
         }, speed);
         playing = true;
-        document.getElementById("play").innerHTML = "&#9616;&#9616;";
+        document.getElementById("play").value = "❚❚";
     }
     else {
         clearTimeout(timer);
         playing = false;
-        document.getElementById("play").innerHTML = "&#9658;";
+        document.getElementById("play").value = "►";
     }
 }
 
