@@ -3,6 +3,35 @@
     margin-left: 5px;
 }
 
+@media only screen and (max-device-width: 340px) {
+    #options .option {
+        width: 100%;
+    }
+
+    #options .option input[type=range] {
+        -webkit-appearance: none !important;
+        background-color: #a5a5a5;
+        width: 100%;
+    }
+
+    #options .option input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 44px;
+        height: 44px;
+        background: #fdfdfd;
+        background: -moz-linear-gradient(top, #fdfdfd 0%, #bebebe 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fdfdfd), color-stop(100%, #bebebe));
+        background: -webkit-linear-gradient(top, #fdfdfd 0%, #bebebe 100%);
+        background: -o-linear-gradient(top, #fdfdfd 0%, #bebebe 100%);
+        background: -ms-linear-gradient(top, #fdfdfd 0%, #bebebe 100%);
+        background: linear-gradient(to bottom, #fdfdfd 0%, #bebebe 100%);
+        border: 1px solid #9a9a9a;
+        -webkit-border-radius: 22px;
+        -moz-border-radius: 22px;
+        border-radius: 22px;
+    }
+}
+
 #functions {
     clear: both;
 }
@@ -23,9 +52,11 @@
 
 #grid {
     position: relative;
+    width: 100%;
 }
 
 #grid-canvas {
     margin: 0;
     padding: 0;
+    width: 100%;
 }
