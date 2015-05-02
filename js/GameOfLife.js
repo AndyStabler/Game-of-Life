@@ -3,6 +3,7 @@
  */
 
 function GameOfLife(width, height) {
+    "use strict";
     this.grid = new Grid(width, height);
 }
 
@@ -10,6 +11,7 @@ function GameOfLife(width, height) {
  * Move to the next generation
  */
 GameOfLife.prototype.step = function() {
+    "use strict";
     this.grid.stepGrid();
 };
 

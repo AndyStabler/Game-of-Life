@@ -3,6 +3,7 @@
  */
 
 function Grid(width, height) {
+    "use strict";
     this.width = width;
     this.height = height;
     this.createCells();
@@ -12,6 +13,7 @@ function Grid(width, height) {
  * Initialise the grid
  */
 Grid.prototype.createCells = function () {
+    "use strict";
     var total = this.width * this.height;
     this.cells = new Array(total);
     for (var i = 0; i < total; i++)
@@ -39,10 +41,7 @@ Grid.prototype.createCells = function () {
  * @returns {int} position of left neighbour
  */
 Grid.prototype.getLeftNeighbourIndex = function (index) {
-    var row = this.getRow(index);
-    var startIndex = this.width * row;
-    var valToAddToLeftIndex = mod(startIndex - 1, this.width);
-    var leftPos = startIndex + valToAddToLeftIndex;
+    "use strict";
     return this.width * this.getRow(index) + mod(index - 1, this.width);
 };
 
@@ -68,6 +67,7 @@ Grid.prototype.getLeftNeighbourIndex = function (index) {
  * @returns {int} position of right neighbour
  */
 Grid.prototype.getRightNeighbourIndex = function (index) {
+    "use strict";
     return this.width * this.getRow(index) + mod(index + 1, this.width);
 };
 
@@ -90,6 +90,7 @@ Grid.prototype.getRightNeighbourIndex = function (index) {
  * @returns {int} position of up neighbour
  */
 Grid.prototype.getUpNeighbourIndex = function (index) {
+    "use strict";
     return mod(index - this.width, this.width * this.height);
 };
 
@@ -112,22 +113,27 @@ Grid.prototype.getUpNeighbourIndex = function (index) {
  * @returns {int} position of down neighbour
  */
 Grid.prototype.getDownNeighbourIndex = function (index) {
+    "use strict";
     return mod(index + this.width, this.width * this.height);
 };
 
 Grid.prototype.getUpLeftNeighbourIndex = function (index) {
+    "use strict";
     return this.getUpNeighbourIndex(this.getLeftNeighbourIndex(index));
 };
 
 Grid.prototype.getUpRightNeighbourIndex = function (index) {
+    "use strict";
     return this.getUpNeighbourIndex(this.getRightNeighbourIndex(index));
 };
 
 Grid.prototype.getDownLeftNeighbourIndex = function (index) {
+    "use strict";
     return this.getDownNeighbourIndex(this.getLeftNeighbourIndex(index));
 };
 
 Grid.prototype.getDownRightNeighbourIndex = function (index) {
+    "use strict";
     return this.getDownNeighbourIndex(this.getRightNeighbourIndex(index));
 };
 
@@ -137,6 +143,7 @@ Grid.prototype.getDownRightNeighbourIndex = function (index) {
  * @returns {Cell[]} array of neighbours
  */
 Grid.prototype.getNeighbours = function (index) {
+    "use strict";
     return [
         this.cells[this.getLeftNeighbourIndex(index)],
         this.cells[this.getUpLeftNeighbourIndex(index)],
@@ -159,6 +166,7 @@ Grid.prototype.getNeighbours = function (index) {
  * @returns {number}
  */
 Grid.prototype.getColumn = function (index) {
+    "use strict";
     if (this.width === 0) return -1;
     return mod(index, this.width);
 };
@@ -173,11 +181,13 @@ Grid.prototype.getColumn = function (index) {
  * @returns {number}
  */
 Grid.prototype.getRow = function (index) {
+    "use strict";
     if (this.width === 0) return -1;
     return Math.floor(index / this.width);
 };
 
 Grid.prototype.getIndex = function (x, y) {
+    "use strict";
     return x + (y * this.width);
 };
 
@@ -186,6 +196,7 @@ Grid.prototype.getIndex = function (x, y) {
  *
  */
 Grid.prototype.stepGrid = function () {
+    "use strict";
     var total = this.width * this.height;
     var newCells = new Array(total);
 
@@ -207,6 +218,7 @@ Grid.prototype.stepGrid = function () {
  * @returns {Cell} the resulting cell
  */
 Grid.prototype.stepCell = function (index) {
+    "use strict";
     // get the neighbours
     var neighbours = this.getNeighbours(index);
     // get the number of alive neighbours
@@ -233,5 +245,6 @@ Grid.prototype.stepCell = function (index) {
 };
 
 function mod(n, m) {
+    "use strict";
     return ((n % m) + m) % m;
 }
