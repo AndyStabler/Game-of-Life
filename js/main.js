@@ -86,8 +86,6 @@ function updateDimension() {
 function initCanvas() {
     "use strict";
     var canvas = document.getElementById('grid-canvas');
-    // clear the canvas
-    canvas.width = canvas.width;
     // set the width to the grid's width
     var dimension = document.getElementById("grid").offsetWidth;
     canvas.width = dimension;
@@ -178,17 +176,6 @@ function getMousePos(event) {
 }
 
 /**
- * when the mouse moves over the canvas, if the mouse is also down, toggle the current cell
- * @param event
- */
-function gridMouseMoveEvt(event) {
-    "use strict";
-    event = event || window.event;
-    if (mDown)
-        toggleCellEvt(event)
-}
-
-/**
  * Toggle a cell's status when the user clicks it
  * @param event the mouse event
  */
@@ -225,6 +212,17 @@ function genesis() {
     "use strict";
     gameOfLife.genesis();
     drawCanvas();
+}
+
+/**
+ * when the mouse moves over the canvas, if the mouse is also down, toggle the current cell
+ * @param event
+ */
+function gridMouseMoveEvt(event) {
+    "use strict";
+    event = event || window.event;
+    if (mDown)
+        toggleCellEvt(event)
 }
 
 function mouseDown() {
