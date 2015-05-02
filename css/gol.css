@@ -1,10 +1,6 @@
-
-#options label {
-    display: block;
-}
-
-.option {
+#options .option {
     float: left;
+    margin-left: 5px;
 }
 
 #functions {
@@ -14,37 +10,22 @@
 #functions input[type=button] {
     background-color: whitesmoke;
     color: #323232;
+    padding: 2px 6px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
-table {
-    width: 50%;
-    border-collapse: collapse;
+#functions input[type=button]:hover {
+    background-color: #c1c1c1;
 }
 
-td {
+#grid {
     position: relative;
 }
 
-td:after {
-    content: '';
-    display: block;
-    margin-top: 100%;
-}
-
-td .cell-dead {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #ECFFCF;
-}
-
-td .cell-alive {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: green;
+#grid-canvas {
+    margin: 0;
+    padding: 0;
 }
